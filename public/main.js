@@ -41,6 +41,41 @@ function updateWaypoint(latitude, longitude) {
     L.marker([latitude, longitude]).addTo(map);
 }
 
+function searchLocation() {
+    const locationQuery = $('#locationSearch').val();
+    if (locationQuery.trim() === "") {
+        alert("Please enter a location");
+        return;
+    }
+
+    $.ajax({
+        url: 'https://nominatim.openstreetmap.org/search',
+        method: 'GET',
+        data: { q: locationQuery, format: 'json', limit: 1 },
+        success: function (response) {
+            if (response.length > 0) {
+                const result = response[0];
+                const latitude = result.lat;
+                const longitude = result.lon;
+
+                $('#latitude').val(latitude);
+                $('#longitude').val(longitude);
+
+                // Update waypoint and recalculate data
+                updateWaypoint(latitude, longitude);
+                calculatePVGISData();
+            } else {
+                alert("Location not found");
+            }
+        },
+        error: function (xhr) {
+            console.error('Error:', xhr.status);
+            alert("Error fetching location data");
+        }
+    });
+}
+
+
 function calculatePVGISData() {
     const latitude = $('#latitude').val();
     const longitude = $('#longitude').val();
