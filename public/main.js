@@ -19,8 +19,10 @@ $(document).ready(function () {
 });
 
 function initMap(latitude, longitude) {
-    // Změňte zoom level na větší hodnotu (např. 10)
-    map = L.map('map').setView([latitude, longitude], 7);
+    const roundedLatitude = parseFloat(latitude).toFixed(3);
+    const roundedLongitude = parseFloat(longitude).toFixed(3);
+
+    map = L.map('map').setView([roundedLatitude, roundedLongitude], 7);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
@@ -42,6 +44,16 @@ function updateWaypoint(latitude, longitude) {
 }
 
 function searchLocation() {
+    performSearch();
+}
+
+$('#locationSearch').keyup(function (event) {
+    if (event.key === 'Enter') {
+        performSearch();
+    }
+});
+
+function performSearch() {
     const locationQuery = $('#locationSearch').val();
     if (locationQuery.trim() === "") {
         alert("Please enter a location");
@@ -55,8 +67,8 @@ function searchLocation() {
         success: function (response) {
             if (response.length > 0) {
                 const result = response[0];
-                const latitude = result.lat;
-                const longitude = result.lon;
+                const latitude = parseFloat(result.lat).toFixed(3);
+                const longitude = parseFloat(result.lon).toFixed(3);
 
                 $('#latitude').val(latitude);
                 $('#longitude').val(longitude);
@@ -74,7 +86,6 @@ function searchLocation() {
         }
     });
 }
-
 
 function calculatePVGISData() {
     const latitude = $('#latitude').val();
