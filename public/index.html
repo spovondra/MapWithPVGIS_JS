@@ -12,22 +12,34 @@
 
 <body>
 <header>
-    <h1>Map with PVGIS Data</h1>
+    <div class="navbar">
+        <h1>Map with PVGIS Data</h1>
+    </div>
 </header>
 <div id="content">
     <div id="map"></div>
     <div id="controls">
-        <label for="latitude">Latitude:</label>
-        <input type="text" id="latitude" value="49.744">
-        <label for="longitude">Longitude:</label>
-        <input type="text" id="longitude" value="15.339">
-        <label for="angle">Angle:</label>
-        <input type="text" id="angle" value="35">
-        <label for="aspect">Aspect:</label>
-        <input type="text" id="aspect" value="0">
+        <div class="input-group">
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" value="49.744">
+        </div>
+        <div class="input-group">
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" value="15.339">
+        </div>
+        <div class="input-group">
+            <label for="angle">Angle:</label>
+            <input type="text" id="angle" value="35">
+        </div>
+        <div class="input-group">
+            <label for="aspect">Aspect:</label>
+            <input type="text" id="aspect" value="0">
+        </div>
         <button onclick="useOptimalValues()">Use Optimal Values</button>
-        <label for="locationSearch">Location:</label>
-        <input type="text" id="locationSearch" placeholder="Enter location">
+        <div class="input-group">
+            <label for="locationSearch">Location:</label>
+            <input type="text" id="locationSearch" placeholder="Enter location">
+        </div>
         <button onclick="searchLocation()">Search</button>
     </div>
     <label for="pvgisData"></label><textarea id="pvgisData" rows="15" cols="80" readonly></textarea>
