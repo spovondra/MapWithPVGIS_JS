@@ -53,6 +53,7 @@ $('#locationSearch').keyup(function (event) {
     }
 });
 
+
 function performSearch() {
     const locationQuery = $('#locationSearch').val();
     if (locationQuery.trim() === "") {
