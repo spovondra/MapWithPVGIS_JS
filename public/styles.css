@@ -8,12 +8,21 @@ body {
 }
 
 header {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px;
+    background-color: #3498db;
     width: 100%;
-    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: white;
+    margin: 0;
 }
 
 #content {
@@ -24,15 +33,15 @@ header {
     margin: 20px;
     background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #map {
     height: 400px;
     width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
     margin-bottom: 20px;
 }
 
@@ -44,24 +53,28 @@ header {
     margin-bottom: 20px;
 }
 
-#controls label,
-#controls input,
-#controls button {
-    margin: 5px;
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.input-group label {
+    margin-bottom: 5px;
 }
 
 #pvgisData {
     width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
     resize: none;
 }
 
-#controls button {
-    background-color: #3498db;
+button {
+    background-color: #227ac8;
     color: white;
     border: none;
     padding: 10px;
@@ -74,6 +87,6 @@ header {
     transition: background-color 0.3s ease;
 }
 
-#controls button:hover {
-    background-color: #2980b9;
+button:hover {
+    background-color: #227ac8;
 }
