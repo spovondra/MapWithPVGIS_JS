@@ -6,12 +6,13 @@ $(document).ready(function () {
     initMap(defaultLatitude, defaultLongitude);
 
     map.on('click', function (e) {
-        const clickedLatitude = e.latlng.lat;
-        const clickedLongitude = e.latlng.lng;
+        const clickedLatitude = e.latlng.lat.toFixed(3);
+        const clickedLongitude = e.latlng.lng.toFixed(3);
 
         $('#latitude').val(clickedLatitude);
         $('#longitude').val(clickedLongitude);
 
+        // Update waypoint and recalculate data
         updateWaypoint(clickedLatitude, clickedLongitude);
         calculatePVGISData();
     });
