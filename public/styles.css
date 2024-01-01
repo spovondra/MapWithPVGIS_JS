@@ -16,6 +16,7 @@ header {
 .navbar {
     display: flex;
     justify-content: center;
+    margin: 10px;
     align-items: center;
 }
 
