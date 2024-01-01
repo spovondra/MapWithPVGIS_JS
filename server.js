@@ -35,11 +35,11 @@ app.post('/api/fetchOptimalValues', async (req, res) => {
 
         const apiRes = await fetchData(apiUrl);
         const jsonResponse = JSON.parse(apiRes);
-        const mountingSystem = jsonResponse.inputs.mounting_system.fixed;
+        const mountingSystem = jsonResponse.inputs["mounting_system"].fixed;
 
         const optimalValues = {
-            optimalAngle: mountingSystem.slope.optimal ? mountingSystem.slope.value : null,
-            optimalAspect: mountingSystem.azimuth.optimal ? mountingSystem.azimuth.value : null
+            optimalAngle: mountingSystem.slope["optimal"] ? mountingSystem.slope.value : null,
+            optimalAspect: mountingSystem.azimuth["optimal"] ? mountingSystem.azimuth.value : null
         };
 
         res.json(optimalValues);
