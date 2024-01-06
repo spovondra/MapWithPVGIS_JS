@@ -1,3 +1,4 @@
+/* Nastavení základních vlastností pro celý dokument */
 body {
     display: flex;
     flex-direction: column;
@@ -7,12 +8,14 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Nastavení vzhledu záhlaví stránky */
 header {
     background-color: #3498db;
     width: 100%;
     padding: 20px;
 }
 
+/* Nastavení vzhledu navigačního panelu */
 .navbar {
     display: flex;
     justify-content: center;
@@ -25,6 +28,7 @@ header {
     margin: 0;
 }
 
+/* Nastavení vzhledu hlavního obsahu stránky */
 #content {
     display: flex;
     flex-direction: column;
@@ -37,6 +41,7 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Nastavení vzhledu mapového elementu */
 #map {
     height: 400px;
     width: 100%;
@@ -45,6 +50,7 @@ header {
     margin-bottom: 20px;
 }
 
+/* Nastavení vzhledu ovládacích prvků a formulářů */
 #controls {
     display: flex;
     flex-wrap: wrap;
@@ -63,6 +69,7 @@ header {
     margin-bottom: 5px;
 }
 
+/* Nastavení vzhledu výstupního pole pro PVGIS data */
 #pvgisData {
     width: 100%;
     border: 2px solid #ddd;
@@ -73,6 +80,7 @@ header {
     resize: none;
 }
 
+/* Nastavení vzhledu tlačítek */
 button {
     background-color: #227ac8;
     color: white;
@@ -87,6 +95,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/* Efekt při najetí myši na tlačítko */
 button:hover {
     background-color: #227ac8;
 }
